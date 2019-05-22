@@ -1,0 +1,45 @@
+\mode<presentation>
+
+
+
+\setbeamertemplate{background}{
+}
+
+% Title page
+\defbeamertemplate*{title page}{insper}[1][]
+{
+\begingroup
+\begin{tikzpicture}[overlay, remember picture]
+    \draw[fill=insperDarkRed] (-1in,-\paperheight) rectangle
+(\paperwidth,\paperheight);
+\end{tikzpicture}
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{img/Insper-negativo}\par
+        \usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par%
+        \usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par%
+        \usebeamercolor[fg]{date}\usebeamerfont{author}\insertdate%
+    \end{center}
+\endgroup
+}
+
+
+%Part page
+
+\defbeamertemplate*{section page}{insper}[1][]
+{
+
+\begingroup
+\begin{tikzpicture}[overlay, remember picture]
+    \draw[fill=insperDarkRed] (-1in,-\paperheight) rectangle
+(\paperwidth,\paperheight);
+\end{tikzpicture}
+    \begin{beamercolorbox}[wd=\paperwidth, sep=10pt, center]{section title}
+    
+    \usebeamerfont{frametitle}\insertsection\par
+    
+    \end{beamercolorbox}
+\endgroup
+}
+
+\mode
+<all>

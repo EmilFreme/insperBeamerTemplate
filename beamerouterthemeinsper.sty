@@ -1,0 +1,26 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{texsx}[1][]
+{
+}
+\defbeamertemplate*{navigation symbols}{insper}{}
+
+\defbeamertemplate*{footline}{insper}{
+    \begingroup
+    \begin{beamercolorbox}[right, sep=5pt]{default}
+    \insertframenumber
+    \end{beamercolorbox}
+    \endgroup
+}
+
+\defbeamertemplate*{frametitle}{insper}[1][left]
+{
+    \begingroup
+        \begin{beamercolorbox}[sep=20pt, wd=\paperwidth]{frametitle}
+            \usebeamerfont{frametitle}\insertframetitle\par    
+        \end{beamercolorbox}
+    \endgroup
+}
+
+\mode<all>
