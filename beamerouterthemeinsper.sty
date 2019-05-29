@@ -9,7 +9,9 @@
 \defbeamertemplate*{footline}{insper}{
     \begingroup
     \begin{beamercolorbox}[right, sep=5pt]{default}
-    \insertframenumber
+    \ifnum\thepage>1\relax
+    \includegraphics[width=0.1\paperwidth]{img/Insper-positivo}
+    \fi
     \end{beamercolorbox}
     \endgroup
 }
@@ -20,6 +22,11 @@
         \begin{beamercolorbox}[sep=20pt, wd=\paperwidth]{frametitle}
             \usebeamerfont{frametitle}\insertframetitle\par    
         \end{beamercolorbox}
+        \begin{tikzpicture}[overlay, remember picture]
+            \node[anchor=north east] at (\paperwidth, 1in){
+                \includegraphics[width=0.25\paperwidth]{img/side}
+            };
+        \end{tikzpicture}
     \endgroup
 }
 

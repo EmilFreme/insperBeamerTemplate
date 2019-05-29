@@ -12,13 +12,21 @@
 \begin{tikzpicture}[overlay, remember picture]
     \draw[fill=insperDarkRed] (-1in,-\paperheight) rectangle
 (\paperwidth,\paperheight);
+    \node[anchor=north east] at (\textwidth, 0.5in){
+        \includegraphics[width=0.15\paperwidth]{img/Insper-negativo}
+    };
 \end{tikzpicture}
     \begin{center}
-        \includegraphics[width=0.3\textwidth]{img/Insper-negativo}\par
         \usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par%
-        \usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par%
-        \usebeamercolor[fg]{date}\usebeamerfont{author}\insertdate%
+        \usebeamercolor[fg]{title}\usebeamerfont{subtitle}\insertsubtitle\par%
     \end{center}
+    \begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=north east] at (\textwidth, -0.5in){
+    \begin{beamercolorbox}[wd=\textwidth,right]{titlePage}
+        \usebeamercolor[fg]{date}\usebeamerfont{author}\insertinstitute\par%
+        \usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par%
+    \end{beamercolorbox}};
+    \end{tikzpicture}
 \endgroup
 }
 
@@ -38,6 +46,8 @@
     \usebeamerfont{frametitle}\insertsection\par
     
     \end{beamercolorbox}
+\begin{tikzpicture}[overlay, remember picture]
+\end{tikzpicture}
 \endgroup
 }
 
