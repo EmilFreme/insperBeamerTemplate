@@ -3,10 +3,11 @@ import os
 
 def install():
     if not "win32" in  os.sys.platform:
-        paths = os.popen("find /urs -name \
-beamerthemedefault.sty").readlines()
-        beamerPath = paths[0].replace("beamerthemedefault.sty\\n", "");
-
+        searchFile = "beamerthemedefault.sty"
+        paths = os.popen("find /usr -name {}".format(searchFile)).readlines()
+        beamerPath = [line for line in paths if searchFile in line][0]
+        beamerPath = beamerPath.replace("/beamerthemedefault.sty\n", "");
+        print(beamerPath)
         print(os.path.exists(beamerPath))
         if(os.path.isdir(beamerPath)):
             print("Texlive beamer path found...")
@@ -30,8 +31,10 @@ beamerthemedefault.sty").readlines()
             os.system("cp -a img/. \
 {}/img/".format(beamerPath))
         else:
-            print("Script para windows em construção")
-            print("Não instalado")
+            print("Beamer Path não encontrado")
+    else:
+        print("Script para windows em construção")
+        print("Não instalado")
 
 if __name__ == "__main__":
     install()
