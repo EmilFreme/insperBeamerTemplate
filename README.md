@@ -10,7 +10,7 @@ atualizações pretendem deixar a instalação agnostica.
 Após clonado o reposiório execute o script `install.py`:
 
 ```
-$sudo ./install.py
+$sudo python3 install.py
 ```
 
 ele irá copiar os arquivos necessários para a pasta beamer de sua distro tex
